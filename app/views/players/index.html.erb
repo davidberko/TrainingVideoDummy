@@ -1,0 +1,26 @@
+<h1>Training Videos!</h1>
+<% @players.each do |p| %>
+
+  <h2><%= p.title %></h2>
+
+  <iframe src="<%= p.video.url %>"></iframe>
+
+<% end %>
+
+
+<% @player = Player.new %>
+<%= form_for @player, :html => {:multipart => true } do |f| %>
+  
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.file_field :video %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
+
