@@ -1,4 +1,8 @@
 TrainingVideoDummy::Application.routes.draw do
+
+  resources :players
+
+  root :to => "players#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
